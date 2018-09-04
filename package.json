@@ -1,42 +1,19 @@
 {
   "author": "Felix Heidecke",
-  "description": "Klickrhein Boilerplate",
-  "version": "0.19.0",
+  "description": "New Work Week",
+  "version": "0.1.0",
   "scripts": {
     "setup": "grunt setup",
-    "watcher": "grunt watcher",
-    "build": "grunt build",
-    "backup": "grunt backup",
-    "update": "grunt update",
-    "test": "grunt test"
+    "watch": "grunt watcher",
+    "build": "grunt build"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-coffee": "^1.0.0",
-    "grunt-contrib-concat": "^1.0.1",
+    "grunt": "^1.0.3",
+    "grunt-contrib-coffee": "^2.0.0",
     "grunt-contrib-connect": "^1.0.2",
-    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-pug": "^1.0.0",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-curl": "^2.2.1",
-    "grunt-move": "^0.1.2",
-    "grunt-zip": "^0.17.1",
-    "highlightjs": "^9.10.0",
-    "ip": "^1.1.5",
-    "lodash": "^4.17.4",
-    "moment": "^2.18.1"
+    "grunt-contrib-watch": "^1.1.0"
   },
-  "dependencies": {
-    "font-awesome": "^4.7.0",
-    "in-view": "^0.6.1",
-    "jquery": "^3.2.1",
-    "lightbox2": "^2.9.0",
-    "mobile-detect": "^1.3.7",
-    "purecss": "^1.0.0",
-    "simplelightbox": "^1.11.1",
-    "swiper": "^3.4.2",
-    "vue": "^2.5.2"
-  }
+  "dependencies": {}
 }

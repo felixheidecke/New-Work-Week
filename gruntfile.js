@@ -27,11 +27,7 @@ module.exports = function(grunt) {
 		},
 
 		clean: {
-			default: [
-				'htdocs/**/*.html',
-				'htdocs/**/*.js',
-				'htdocs/**/*.css'
-			]
+			default: ['htdocs']
 		},
 
 		// --- Pug ------------------------------------------------------------
@@ -45,11 +41,19 @@ module.exports = function(grunt) {
 						debug: false
 					}
 				},
+				files: {
+					'htdocs/index.html' : 'src/index.pug'
+				}
+			}
+		},
+
+		copy: {
+			images: {
 				files: [{
-					src: ["src/*.pug"],
-					dest: "htdocs/",
 					expand: true,
-					ext: ".html"
+					flatten: true,
+					src: ['src/images/*'],
+					dest: 'htdocs/images/'
 				}]
 			}
 		},
@@ -92,5 +96,16 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-pug');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+
+	grunt.registerTask("default", [
+		'sass',
+		'pug',
+		'coffee',
+		'copy',
+		'connect',
+		'watch'
+	]);
 };

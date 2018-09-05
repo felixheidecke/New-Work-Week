@@ -1,0 +1,114 @@
+.content {
+    display: inline-block;
+    width: 100%;
+    color: $c-light;
+    background: {
+        color: $c-background-secondary;
+    }
+}
+
+.section {
+    &-title {
+        @extend .margin-top-xlarge, .margin-bottom-large, .text-large, .text-center, .text-uppercase, .font-bold;
+    }
+}
+
+.eventbox {
+    @extend .margin-top-xlarge;
+}
+
+.event-info {
+    &-date {
+        display: flex;
+        flex-wrap: wrap;
+
+        &--day,
+        &--date,
+        &--time {
+            border-top: 4px solid $c-dark;
+            font-size: $font-size-large;
+            line-height: $line-height;
+            padding: {
+                left: $grid-spacing / 4;
+                right: $grid-spacing / 4;
+            }
+        }
+
+        &--day {
+            // width: 47%;
+            flex-grow: 1;
+            background-color: $c-dark;
+            color: $c-background-secondary;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        &--date {
+            flex-grow: 1;
+            // width: 53%;
+            color: $c-dark;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        &--time {
+            width: 100%;
+            color: $c-dark;
+            font-weight: 700;
+        }
+    }
+
+    &-location {
+        &--location,
+        &--address {
+            color: $c-dark;
+            border-top: 4px solid $c-dark;
+            display: block;
+            font-size: $font-size-small;
+            line-height: $line-height * 1.25;
+            padding: {
+                left: $grid-spacing / 4;
+                right: $grid-spacing / 4;
+            }
+        }
+
+        &--address {
+            @extend .reset;
+            border-bottom: 4px solid $c-dark;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+
+            li:not(:last-child) {
+                &:after {
+                    content: "|";
+                    margin: 0 $grid-spacing / 4;
+                }
+            }
+        }
+    }
+
+    &-link {
+        margin-top: $grid-spacing * 1.5;
+        display: inline-block;
+        color: $c-light !important;
+        text-decoration: none;
+        border-radius: 4px;
+        text-transform: uppercase;
+
+        padding: ($grid-spacing - 10px) ($grid-spacing * 2);
+        background-color: #0080C8;
+    }
+}
+
+.event-description {
+
+    &-title {
+        font-size: 24px;
+        line-height: 1.2;
+        margin: {
+            top: $grid-spacing * -.5;
+            bottom: $grid-spacing;
+        }
+    }
+}

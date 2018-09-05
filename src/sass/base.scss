@@ -1,0 +1,32 @@
+.reset {
+    margin: 0;
+    padding: 0;
+}
+
+body, h1, h2, h3, h4, p {
+    line-height: $line-height;
+
+    font: {
+        family: 'Roboto', sans-serif;
+        size: $font-size-small;
+        weight: 300;
+    }
+}
+
+strong, .strong-font, b {
+    font-weight: 500;
+}
+
+.wrapper {
+    max-width: $viewport;
+    
+    padding: {
+        left: $grid-spacing;
+        right: $grid-spacing;
+    }
+
+    margin : {
+        left: auto;
+        right: auto;
+    }
+}

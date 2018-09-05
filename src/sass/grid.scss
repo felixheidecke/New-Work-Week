@@ -1,0 +1,16 @@
+._grid {
+    display: flex;
+    justify-content: space-between;
+
+    > ._row {
+        &-one-third {
+            width: calc(33.333% - #{$grid-spacing});
+        }
+        &-two-thirds {
+            width: calc(66.666% - #{$grid-spacing});
+        }
+        &-half {
+            width: calc(50% - #{$grid-spacing});
+        }
+    }
+}

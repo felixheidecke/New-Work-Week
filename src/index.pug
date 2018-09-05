@@ -2,3 +2,78 @@ extends _default
 
 block title
     | New Work Week
+
+block body
+    header.intro
+        .wrapper
+            h1.intro-logo new-work-week.com
+            h2.intro-date
+                time(datetime="2018-10-15") 15.
+                |&nbsp;&dash;
+                time(datetime="2018-10-19") 19. Oktober 2018
+
+            span.intro-location Nürnberg
+            p
+                | Die Antwort auf das NEU ist zugleich die Frage: was ist wirklich GEALTERT und was nicht?<br>
+                | allen Ehren in Ruhe gelassen zu werden oder besonders hervorgehoben zu werden<br>
+                | – um WERTE und Tradition zu feiern.
+
+            nav.intro-nav
+                a(href="") Über die&nbsp;
+                    strong New Work Week
+                a(href="") Zum&nbsp;
+                    strong Programm
+
+            nav.logo-nav
+                ul.reset
+                    li(data-href="http://", data-image="gfx/logo-humanfy.png") Humanify
+                    li(data-href="http://", data-image="gfx/logo-psd-bank.svg") PSD Bank
+    
+    main.content
+        .wrapper
+            section.section
+                h2.margin-top-xlarge.margin-bottom-large.text-large.text-center.text-uppercase.font-bold Was auf der New Work Week passiert
+                ._grid
+                    ._row-half
+                        p Wir schaffen <b>Inspirationsräume</b> und machen den Spagat zwischen „ausgedient“ und „sinnstiftend“ - offen, gemeinsam und per Du. 
+                        p Wir bereiten Change und Transformation zum Ereignis und nehmen auch diejenigen mit, die sich jetzt erst mit NEW WORK beschäftigen. Wir verbinden unterschiedliche Perspektiven und vereinfachen mit „start with simplify“ die Komplexität. Wir betrachten was sich wirklich verändert hat und sind startklar in jeder Beziehung für neu geschaffene „grüne Arbeitswelten“.
+                    ._row-half
+                        p Wir erkunden (draußen) was das Leben spannend macht und schreiben den NEW WORK THRILL „Outsite“ (drinnen). Wir übersetzen agile Regeln von Software zu Brainware in einer einzigartigen Atmosphäre. Wir gestalten eine offene Roadmap und bringen das zusammen, was neu zusammen bringen soll.
+                        p Täglich vom Montag bis Freitag findet ihr einen neuen Spirit, angenehmes Netzwerken und tolle Umgebungen, die unsere Gastgeber und Co-Initiatoren möglich machen.
+
+            section.section
+                h2.section-title Programm
+                p Ab sofort können SIe sich zu den Veranstaltungen anmelden. Bitte beachten Sie, dass auf Grund der Räumlichkeiten die Teilnehmerzahl begrenzt ist.
+
+            section#events
+                ul.reset
+                    li(v-for="(event, e_id) in events").eventbox._grid
+                        ._row-half
+                            .event-info
+                                time(:datetime="event.date").event-info-date
+                                    span.event-info-date--day {{ event.date | dddd }}
+                                    span.event-info-date--date {{ event.date | ll }}
+                                    span.event-info-date--time {{ event.starts }} &ndash; {{ event.ends }} Uhr
+                                adress.event-info-location
+                                    span.event-info-location--location {{ event.location }}
+                                    ul.event-info-location--address
+                                        li(v-for="(locItem, l_id) in event.address") {{ locItem }}
+                                a(:href="event.link").event-info-link Kostenfreies <b>Ticket</b>
+                        ._row-half
+                            .event-description
+                                h3.event-description-title
+                                    span.strong-font(v-if="event.title[0]") {{ event.title[0] }}
+                                    span(v-if="event.title[1]")
+                                        br
+                                        | {{ event.title[1] }}
+                                p(v-for="(p, p_id) in event.text") {{ p }}
+            
+            p.margin-xlarge
+                strong Kontakt<br>
+                | Arthur P. Soballa<br>
+                | c/o Möbelkollektiv GmbH | Wiesentalstraße 40 | Bauteil C | 90419 Nürnberg<br>
+                | mobile +49 172 277 91 21 | www.arpeso.de | info@arpeso.de
+        
+    footer
+        .wrapper
+            include _logo-nav-bottom

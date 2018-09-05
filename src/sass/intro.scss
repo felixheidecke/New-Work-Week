@@ -1,0 +1,66 @@
+$intro-logo-size: $grid-spacing * 6;
+
+.intro {
+    margin-top: $grid-spacing * 4;
+    text-align: center;
+
+    background: {
+        color: $c-light;
+        image: url('../images/background-header.png');
+        position: center top;
+        size: 100% auto;
+        repeat: no-repeat;
+    }
+
+    &-location {
+        display: block;
+        text-transform: uppercase;
+        clear: both;
+    }
+
+    &-date {
+        @extend .reset;
+
+        clear: both;
+        display: inline-block;
+        text-transform: uppercase;
+        line-height: $line-height;
+
+        margin: {
+            top: $grid-spacing * 5;
+            bottom: $grid-spacing * 2.5;
+        }
+
+        font: {
+            weight: 900;
+            size: $font-size-xlarge;
+        }
+        
+        border: {
+            top: 4px solid $c-dark;
+            bottom: 4px solid $c-dark;
+        }
+        
+        padding: {
+            left: $grid-spacing * 3;
+            right: $grid-spacing * 3;
+        }
+    }
+
+    &-logo {
+        @extend .reset;
+        clear: both;
+        padding-top: $intro-logo-size + $grid-spacing;
+        text-transform: uppercase;
+        font-size: $font-size-xlarge;
+        font-style: italic;
+
+        background: {
+            color: transparent;
+            image: url('../images/logo-new-work-week.svg');
+            position: top center;
+            size: $intro-logo-size auto;
+            repeat: no-repeat;
+        }
+    }
+}

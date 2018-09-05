@@ -1,37 +1,35 @@
+const package = require('./package.json');
+
 module.exports = function(grunt) {
 	grunt.initConfig({
-
-
 		// --- Compile Sass and Coffee -----------------------------------------
-
 		sass: {
 			default: {
 				options: {
 					force: true,
-					style: "compressed",
+					style: "expanded",
 					noCache: true
 				},
 				files: {
-					'htdocs/css/style.min.css': 'src/sass/style.scss'
+					'htdocs/css/style.css': 'src/sass/style.scss'
 				}
 			}
 		},
-
 		coffee: {
 			default: {
+				options: {
+					join: true
+				},
 				files: {
-					'htdocs/js/default.js' : [
-						'src/coffee/**/*.coffee' ]
+					'htdocs/js/default.js': ['src/coffee/event-list.coffee', 'src/coffee/event-app.coffee', 'src/coffee/*.coffee']
 				}
 			}
 		},
-
 		clean: {
-			default: ['htdocs']
+			default: ['htdocs'],
+			temp : ['.temp']
 		},
-
 		// --- Pug ------------------------------------------------------------
-
 		pug: {
 			default: {
 				options: {
@@ -42,11 +40,10 @@ module.exports = function(grunt) {
 					}
 				},
 				files: {
-					'htdocs/index.html' : 'src/index.pug'
+					'htdocs/index.html': 'src/index.pug'
 				}
 			}
 		},
-
 		copy: {
 			images: {
 				files: [{
@@ -55,11 +52,18 @@ module.exports = function(grunt) {
 					src: ['src/images/*'],
 					dest: 'htdocs/images/'
 				}]
+			},
+			deploy : {
+				files : [{
+					cwd : 'htdocs',
+					expand : true,
+					flatten: false,
+					src:['**'],
+					dest: '.temp/' + package.id + '/' + package.version
+				}]
 			}
 		},
-
 		// --- Server ---------------------------------------------------------
-
 		connect: {
 			devServer: {
 				options: {
@@ -71,23 +75,29 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-
 		// --- Watcher ---------------------------------------------------------
-
 		watch: {
 			default: {
 				options: {
-					spawn: false
+					spawn: false,
+					livereload: true
 				},
-				files: [
-					"src/**/*.coffee",
-					"src/**/*.pug",
-					"src/**/*.scss" ],
-
-				tasks: [
-					"sass",
-					"pug",
-					"coffee"]
+				files: ["src/**/*.coffee", "src/**/*.pug", "src/**/*.scss"],
+				tasks: ["sass", "pug", "coffee"]
+			}
+		},
+		'ftp-deploy': {
+			build: {
+				auth: {
+					host: 'wp327.webpack.hosteurope.de',
+					port: 21,
+					authKey: 'felix-click'
+				},
+				src: '.temp',
+				dest: '/',
+				exclusions: [
+					'htdocs/**/.DS_Store'
+				]
 			}
 		}
 	});
@@ -99,13 +109,15 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-clean');
-
-	grunt.registerTask("default", [
-		'sass',
-		'pug',
-		'coffee',
-		'copy',
-		'connect',
-		'watch'
+	grunt.loadNpmTasks('grunt-ftp-deploy');
+	
+	grunt.registerTask("default", ['sass', 'pug', 'coffee', 'copy:images', 'connect', 'watch']);
+	grunt.registerTask("build", ['sass', 'pug', 'coffee', 'copy:images']);
+	
+	grunt.registerTask("deploy", [
+		'build',
+		'copy:deploy',
+		'ftp-deploy',
+		'clean:temp'
 	]);
 };

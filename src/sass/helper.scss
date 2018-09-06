@@ -113,3 +113,16 @@
         font-weight: 900;
     }
 }
+
+
+.hidden-on-large {
+    @media (min-width: 1024px) {
+        display: none;
+    }
+}
+
+.hidden-on-small {
+    @media (max-width: 1023px) {
+        display: none;
+    }
+}

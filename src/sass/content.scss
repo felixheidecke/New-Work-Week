@@ -9,7 +9,22 @@
 
 .section {
     &-title {
-        @extend .margin-top-xlarge, .margin-bottom-large, .text-large, .text-center, .text-uppercase, .font-bold;
+        @extend .text-center, .text-uppercase, .font-bold;
+
+        @media (max-width: 1023px) {
+            margin : {
+                top: $grid-spacing * 3;
+                bottom: $grid-spacing * 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            font-size: $font-size-large;
+            margin : {
+                top: $grid-spacing * 6;
+                bottom: $grid-spacing * 4;
+            }
+        }
     }
 }
 
@@ -26,29 +41,38 @@
         &--date,
         &--time {
             border-top: 4px solid $c-dark;
-            font-size: $font-size-large;
+            font-size: $font-size + 4;
             line-height: $line-height;
             padding: {
                 left: $grid-spacing / 4;
                 right: $grid-spacing / 4;
             }
+
+            @media (min-width: 1024px) {
+                font-size: $font-size-large;
+            }
         }
 
         &--day {
-            // width: 47%;
             flex-grow: 1;
             background-color: $c-dark;
             color: $c-background-secondary;
-            text-align: center;
             font-weight: 900;
+            text-align: center;
         }
 
         &--date {
             flex-grow: 1;
-            // width: 53%;
             color: $c-dark;
-            text-align: center;
             font-weight: 700;
+
+            @media (max-width: 1023px) {
+                width: 100%;
+            }
+            
+            @media (min-width: 1024px) {
+                text-align: center;
+            }
         }
 
         &--time {
@@ -102,13 +126,17 @@
 }
 
 .event-description {
-
     &-title {
         font-size: 24px;
         line-height: 1.2;
-        margin: {
-            top: $grid-spacing * -.5;
-            bottom: $grid-spacing;
+        margin-bottom: $grid-spacing;
+
+        @media (min-width: 1024px) {
+            margin-top: $grid-spacing * -.5;
+        }
+
+        @media (max-width: 1023px) {
+            margin-top: $grid-spacing !important;
         }
     }
 }

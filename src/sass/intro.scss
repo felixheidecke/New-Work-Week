@@ -1,7 +1,7 @@
 $intro-logo-size: $grid-spacing * 6;
 
 .intro {
-    margin-top: $grid-spacing * 4;
+    margin-top: $grid-spacing * 2;
     text-align: center;
     background: {
         color: $c-light;
@@ -30,28 +30,33 @@ $intro-logo-size: $grid-spacing * 6;
         @extend .reset;
 
         clear: both;
-        display: inline-block;
         text-transform: uppercase;
         line-height: $line-height;
 
         margin: {
-            top: $grid-spacing * 5;
+            top: $grid-spacing * 2;
             bottom: $grid-spacing * 2.5;
         }
 
         font: {
             weight: 900;
-            size: $font-size-xlarge;
+            size: $font-size;
         }
         
         border: {
             top: 4px solid $c-dark;
             bottom: 4px solid $c-dark;
         }
-        
-        padding: {
-            left: $grid-spacing * 3;
-            right: $grid-spacing * 3;
+
+        @media (min-width: 1024px) {
+            display: inline-block;
+            font-size: $font-size-xlarge;
+            margin-top: $grid-spacing * 5;
+
+            padding: {
+                left: $grid-spacing * 3;
+                right: $grid-spacing * 3;
+            }
         }
     }
 
@@ -59,8 +64,8 @@ $intro-logo-size: $grid-spacing * 6;
         @extend .reset;
         clear: both;
         padding-top: $intro-logo-size + $grid-spacing;
+        font-size: $font-size + 4;
         text-transform: uppercase;
-        font-size: $font-size-xlarge;
         font-style: italic;
 
         background: {
@@ -70,29 +75,43 @@ $intro-logo-size: $grid-spacing * 6;
             size: $intro-logo-size auto;
             repeat: no-repeat;
         }
+
+        @media (min-width: 1024px) {
+            font-size: $font-size-xlarge;
+        }
     }
 
     &-nav ul {
         @extend .reset;
 
         list-style: none;
-        display: flex;
         justify-content: center;
 
         li {
             text-transform: uppercase;
+        }
 
-            &:not(:last-child):after {
-                content: "|";
-                margin: 0 $grid-spacing / 2;
+        @media (max-width: 1023px) {
+            li:not(:last-child) {
+                margin-bottom: $grid-spacing;
             }
-
-            a {
-                transition: border-bottom .25s;
-                border-bottom: 1px solid transparent;
-                
-                &:hover {
-                    border-bottom: 1px solid $c-dark;
+        }
+        
+        @media (min-width: 1024px) {
+            display: flex;
+            li {
+                &:not(:last-child):after {
+                    content: "|";
+                    margin: 0 $grid-spacing / 2;
+                }
+    
+                a {
+                    transition: border-bottom .25s;
+                    border-bottom: 1px solid transparent;
+                    
+                    &:hover {
+                        border-bottom: 1px solid $c-dark;
+                    }
                 }
             }
         }
@@ -100,5 +119,9 @@ $intro-logo-size: $grid-spacing * 6;
 
     .logo-nav {
         background-color: rgba($c-light, .5);
+    }
+
+    @media (min-width: 1024px) {
+        margin-top: $grid-spacing * 4;
     }
 }

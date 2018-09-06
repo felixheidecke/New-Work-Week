@@ -2,8 +2,6 @@ new Vue
     el : '#events'
     data : 
         events : eventList
-    mounted: ->
-        console.log @.events
     filters : 
         dddd: (date) ->
             moment date 

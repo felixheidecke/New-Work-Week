@@ -7,4 +7,6 @@ $ '[data-href]'
 $ '[data-background]'
     .each ->
         image = $(@).data 'background'
-        $(@).css 'backgroundImage', "url(#{image})"
+        $(@)
+            .removeAttr 'data-background'
+            .css 'backgroundImage', "url(#{image})"

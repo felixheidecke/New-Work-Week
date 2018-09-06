@@ -1,4 +1,4 @@
-extends _default
+extends _template.default.pug
 
 block title
     | New Work Week
@@ -12,23 +12,31 @@ block body
                 |&nbsp;&dash;
                 time(datetime="2018-10-19") 19. Oktober 2018
 
-            span.intro-location Nürnberg
+            span.intro-location Nürnbergs
             p
                 | Die Antwort auf das NEU ist zugleich die Frage: was ist wirklich GEALTERT und was nicht?<br>
                 | allen Ehren in Ruhe gelassen zu werden oder besonders hervorgehoben zu werden<br>
                 | – um WERTE und Tradition zu feiern.
 
             nav.intro-nav
-                a(href="") Über die&nbsp;
-                    strong New Work Week
-                a(href="") Zum&nbsp;
-                    strong Programm
+                ul
+                    li: a(href="")
+                        | Über die&nbsp;
+                        strong New Work Week
+                    li: a(href="")
+                        | Zum&nbsp;
+                        strong Programm
 
-            nav.logo-nav
+        nav.logo-nav.margin-top-medium
+            .wrapper.margin
                 ul.reset
-                    li(data-href="http://", data-image="gfx/logo-humanfy.png") Humanify
-                    li(data-href="http://", data-image="gfx/logo-psd-bank.svg") PSD Bank
-    
+                    li(data-href="http://", data-background="images/logo-humanfy.png") Humanify
+                    li(data-href="http://", data-background="images/logo-psd-bank.svg") PSD Bank
+                    li(data-href="http://", data-background="images/logo-teambank.png") Teambank
+                    li(data-href="http://", data-background="images/logo-exitgames-nurnberg.png") Exitgames
+                    li(data-href="http://", data-background="images/logo-fachkraefterekrutieren-de.png") Exitgames
+                    li(data-href="http://", data-background="images/logo-sparda-consult.png") Sparda-Consult
+        
     main.content
         .wrapper
             section.section
@@ -76,4 +84,4 @@ block body
         
     footer
         .wrapper
-            include _logo-nav-bottom
+            include -logo-nav-bottom

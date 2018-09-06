@@ -7,9 +7,10 @@ $intro-logo-size: $grid-spacing * 6;
     background: {
         color: $c-light;
         image: url('../images/background-header.png');
-        position: center top;
-        size: 100% auto;
+        position: center $grid-spacing * 7;
+        size: 95% auto;
         repeat: no-repeat;
+        attachment: fixed;
     }
 
     &-location {
@@ -62,5 +63,35 @@ $intro-logo-size: $grid-spacing * 6;
             size: $intro-logo-size auto;
             repeat: no-repeat;
         }
+    }
+
+    &-nav ul {
+        @extend .reset;
+
+        list-style: none;
+        display: flex;
+        justify-content: center;
+
+        li {
+            text-transform: uppercase;
+
+            &:not(:last-child):after {
+                content: "|";
+                margin: 0 $grid-spacing / 2;
+            }
+
+            a {
+                transition: border-bottom .25s;
+                border-bottom: 1px solid transparent;
+                
+                &:hover {
+                    border-bottom: 1px solid $c-dark;
+                }
+            }
+        }
+    }
+
+    .logo-nav {
+        background-color: rgba($c-light, .5);
     }
 }

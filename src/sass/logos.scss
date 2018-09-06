@@ -4,22 +4,27 @@
     }
 }
 
-.logo-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
+.logo-nav {
+    display: inline-block;
+    width: 100%;
 
-    li[data-href] {
-        display: block;
-        cursor: pointer;
-        margin: 0 $grid-spacing / 2;
-        width: 100%;
-        height: $grid-spacing * 4;
-        text-indent: -8365px;
-        background: {
-            position: center center;
-            size: contain;
-            repeat: no-repeat;
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+
+        li[data-href] {
+            display: block;
+            cursor: pointer;
+            margin: 0 $grid-spacing / 2;
+            width: 100%;
+            height: $grid-spacing * 4;
+            text-indent: -8365px;
+            background: {
+                position: center center;
+                size: contain;
+                repeat: no-repeat;
+            }
         }
     }
 }

@@ -21,26 +21,50 @@ module.exports = function(grunt) {
 					join: true
 				},
 				files: {
-					'htdocs/js/default.js': ['src/coffee/event-list.coffee', 'src/coffee/event-app.coffee', 'src/coffee/*.coffee']
+					'htdocs/js/default.js': [
+						'src/coffee/event-list.coffee',
+						'src/coffee/event-app.coffee',
+						'src/coffee/*.coffee'
+					]
 				}
 			}
 		},
 		clean: {
 			default: ['htdocs'],
-			temp : ['.temp']
+			temp: ['.temp']
 		},
 		// --- Pug ------------------------------------------------------------
 		pug: {
-			default: {
+			dev: {
 				options: {
 					client: false,
 					pretty: "    ",
 					data: {
-						debug: false
+						DEV : true,
+						VERSION : package.version,
+						BUILD : Date.now()
 					}
 				},
 				files: {
-					'htdocs/index.html': 'src/index.pug'
+					'htdocs/index.html': [
+						'src/index.pug'
+					]
+				}
+			},
+			prod: {
+				options: {
+					client: false,
+					pretty: "  ",
+					data: {
+						PROD : true,
+						VERSION : package.version,
+						BUILD : Date.now()
+					}
+				},
+				files: {
+					'htdocs/index.html': [
+						'src/index.pug'
+					]
 				}
 			}
 		},
@@ -53,13 +77,13 @@ module.exports = function(grunt) {
 					dest: 'htdocs/images/'
 				}]
 			},
-			deploy : {
-				files : [{
-					cwd : 'htdocs',
-					expand : true,
+			deploy: {
+				files: [{
+					cwd: 'htdocs',
+					expand: true,
 					flatten: false,
-					src:['**'],
-					dest: '.temp/' + package.id + '/' + package.version
+					src: ['**'],
+					dest: '.temp/deploy/' + package.id + '/' + package.version
 				}]
 			}
 		},
@@ -83,7 +107,7 @@ module.exports = function(grunt) {
 					livereload: true
 				},
 				files: ["src/**/*.coffee", "src/**/*.pug", "src/**/*.scss"],
-				tasks: ["sass", "pug", "coffee"]
+				tasks: ["sass", "pug:dev", "coffee"]
 			}
 		},
 		'ftp-deploy': {
@@ -93,7 +117,7 @@ module.exports = function(grunt) {
 					port: 21,
 					authKey: 'felix-click'
 				},
-				src: '.temp',
+				src: '.temp/deploy',
 				dest: '/',
 				exclusions: [
 					'htdocs/**/.DS_Store'
@@ -109,11 +133,25 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+
 	grunt.loadNpmTasks('grunt-ftp-deploy');
+
+	grunt.registerTask("default", [
+		'sass',
+		'pug:dev',
+		'coffee',
+		'copy:images',
+		'connect',
+		'watch'
+	]);
 	
-	grunt.registerTask("default", ['sass', 'pug', 'coffee', 'copy:images', 'connect', 'watch']);
-	grunt.registerTask("build", ['sass', 'pug', 'coffee', 'copy:images']);
-	
+	grunt.registerTask("build", [
+		'sass',
+		'pug:prod',
+		'coffee',
+		'copy:images'
+	]);
+
 	grunt.registerTask("deploy", [
 		'build',
 		'copy:deploy',

@@ -18,10 +18,10 @@ block body
 
             nav.intro-nav
                 ul
-                    li: a(href="")
+                    li: a(href="/index.html#about")
                         | Über die&nbsp;
                         strong New Work Week
-                    li: a(href="")
+                    li: a(href="/index.html#agenda")
                         | Zum&nbsp;
                         strong Programm
 
@@ -38,6 +38,7 @@ block body
     main.content
         .wrapper
             section.section
+                a(name="about")
                 h2.section-title Was auf der New Work Week passiert
                 ._grid
                     ._row-half
@@ -54,6 +55,7 @@ block body
                             | Arthur
 
             section.section
+                a(name="agenda")
                 h2.section-title Programm
                 p Ab sofort können Sie sich zu den Veranstaltungen anmelden. Bitte beachten Sie, dass auf Grund der Räumlichkeiten die Teilnehmerzahl begrenzt ist.
 
@@ -84,7 +86,7 @@ block body
                 strong Kontakt<br>
                 | Arthur P. Soballa<br>
                 | c/o Möbelkollektiv GmbH | Wiesentalstraße 40 | Bauteil C | 90419 Nürnberg<br>
-                | mobile +49 172 277 91 21 | www.new-work-week.com | info@new-work-week.com
+                | mobile +49 172 277 91 21 | www.new-work-week.com | <a href="mailto:info@new-work-week.com">info@new-work-week.com</a>
 
             .text-center.margin-bottom-medium
                 img(src="images/logo-ndf-partner-white.svg", alt="NDF", style="width:300px;")
@@ -96,6 +98,6 @@ block body
             include -logo-nav-bottom
 
             p.text-center
-                a(href="") Impressum
+                a(href="/impressum.html") Impressum
                 span &nbsp;|&nbsp;
-                a(href="") Datenschutz
+                a(href="/datenschutz.html") Datenschutz

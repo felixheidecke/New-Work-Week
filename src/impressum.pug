@@ -1,0 +1,57 @@
+extends _template.default.pug
+
+block title
+    | New Work Week - Impressum
+
+block body
+    header.intro
+        .wrapper
+            h1.intro-logo new-work-week.com
+            h2.intro-date
+                time(datetime="2018-10-15") 15.
+                |&nbsp;&dash;
+                time(datetime="2018-10-19") 19. Oktober 2018
+
+            nav.intro-nav.margin-bottom-medium
+                ul
+                    li: a(href="/index.html#about")
+                        | Über die&nbsp;
+                        strong New Work Week
+                    li: a(href="/index.html#agenda")
+                        | Zum&nbsp;
+                        strong Programm
+        
+    main.content
+        .wrapper
+            section.section
+                h2.section-title Impressum
+
+                p Angaben gemäß § 5 Telemediengesetz
+
+                p
+                    | Verantwortlich für den Inhalt:<br>
+                    span.font-bold Arthur Soballa
+
+                p
+                    | Wiesentalstraße 40, 90419 Nürnberg
+                    | mobile +49 172 277 91 21
+
+            p.margin-xlarge
+                strong Kontakt<br>
+                | Arthur P. Soballa<br>
+                | c/o Möbelkollektiv GmbH | Wiesentalstraße 40 | Bauteil C | 90419 Nürnberg<br>
+                | mobile +49 172 277 91 21 | www.new-work-week.com | <a href="mailto:info@new-work-week.com">info@new-work-week.com</a>
+
+            .text-center.margin-bottom-medium
+                img(src="images/logo-ndf-partner-white.svg", alt="NDF", style="width:300px;")
+
+
+
+    footer#footer
+        .wrapper
+            include -logo-nav-bottom
+
+            p.text-center
+                a(href="#") Impressum
+                span &nbsp;|&nbsp;
+                a(href="/datenschutz.html") Datenschutz

@@ -2,7 +2,7 @@
   "id": "WUE.018.01",
   "author": "Felix Heidecke",
   "description": "New Work Week",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "scripts": {
     "setup": "grunt setup",
     "watch": "grunt watcher",

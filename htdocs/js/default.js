@@ -63,23 +63,25 @@
     }
   ];
 
-  new Vue({
-    el: '#events',
-    data: {
-      events: eventList
-    },
-    filters: {
-      dddd: function(date) {
-        return moment(date).format('dddd');
+  if ($('#events').length) {
+    new Vue({
+      el: '#events',
+      data: {
+        events: eventList
       },
-      ll: function(date) {
-        return moment(date).format('ll');
-      },
-      LT: function(date) {
-        return moment(date).format('LT');
+      filters: {
+        dddd: function(date) {
+          return moment(date).format('dddd');
+        },
+        ll: function(date) {
+          return moment(date).format('ll');
+        },
+        LT: function(date) {
+          return moment(date).format('LT');
+        }
       }
-    }
-  });
+    });
+  }
 
   $('[data-href]').click(function() {
     var href, name;

@@ -1,6 +1,8 @@
 $intro-logo-size: $grid-spacing * 6;
 
 .intro {
+    display: inline-block;
+    width: 100%;
     margin-top: $grid-spacing * 2;
     text-align: center;
     background: {

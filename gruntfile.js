@@ -47,9 +47,9 @@ module.exports = function(grunt) {
 					}
 				},
 				files: {
-					'htdocs/index.html': [
-						'src/index.pug'
-					]
+					'htdocs/index.html':'src/index.pug',
+					'htdocs/impressum.html':'src/impressum.pug',
+					'htdocs/datenschutz.html':'src/datenschutz.pug'
 				}
 			},
 			prod: {

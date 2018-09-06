@@ -8,7 +8,7 @@ eventList = [{
     ]
     starts   : '2018-10-15 15:00'
     ends     : '2018-10-15 17:30'
-    link     : 'http://'
+    link     : ''
     location : 'humanfy @Design Offices Nürnberg'
     address  : [
         'Königstorgraben 11'
@@ -24,7 +24,7 @@ eventList = [{
     ]
     starts   : '2018-10-16 18:30'
     ends     : '2018-10-16 23:00'
-    link     : 'http://'
+    link     : ''
     location : 'PSD-Bank @Möbelkollektiv'
     address  : [
         'Wiesentalstrasse 40'
@@ -42,7 +42,7 @@ eventList = [{
     ],
     starts : '2018-10-17 14:00'
     ends   : '2018-10-17 17:30'
-    link   : 'http://'
+    link   : ''
     location : 'ExitGames @DesignOffices Nürnberg'
     address : [
         'Königstorgraben 11'
@@ -58,7 +58,7 @@ eventList = [{
     ]
     starts : '2018-10-18 18:30'
     ends : '2018-10-18 23:00'
-    link : 'http://'
+    link : ''
     location : 'TeamBank @Möbelkollektiv'
     address : [
         'Wiesentalstraße 40'
@@ -76,7 +76,7 @@ eventList = [{
     ]
     starts : '2018-10-19 18:30'
     ends : '2018-10-19 23:00'
-    link : 'http://'
+    link : ''
     location : 'Sparda-Consult'
     address : [
         'Laufamholzstraße 116'

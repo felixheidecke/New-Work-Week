@@ -72,7 +72,7 @@ block body
                                     span.event-info-location--location {{ event.location }}
                                     ul.event-info-location--address
                                         li(v-for="(locItem, l_id) in event.address") {{ locItem }}
-                                a(:href="event.link").event-info-link Kostenfreies <b>Ticket</b>
+                                a(v-if="event.link.length > 0", :href="event.link").event-info-link Kostenfreies <b>Ticket</b>
                         ._row-half
                             .event-description
                                 h3.event-description-title

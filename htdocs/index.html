@@ -6,7 +6,7 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="FHE:version" content="0.2.0">
-    <meta name="FHE:build" content="1536237210056">
+    <meta name="FHE:build" content="1536237511181">
     <link rel="icon" href="images/logo-new-work-week.svg" sizes="any" type="image/svg+xml">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i">
     <link rel="stylesheet" href="css/style.css">
@@ -80,7 +80,7 @@
                     <ul class="event-info-location--address">
                       <li v-for="(locItem, l_id) in event.address">{{ locItem }}</li>
                     </ul>
-                  </address><a class="event-info-link" :href="event.link">Kostenfreies <b>Ticket</b></a>
+                  </address><a class="event-info-link" v-if="event.link.length &gt; 0" :href="event.link">Kostenfreies <b>Ticket</b></a>
                 </div>
               </div>
               <div class="_row-half">

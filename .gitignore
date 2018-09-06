@@ -1,5 +1,4 @@
 node_modules/
-htdocs/
 package-lock.json
 .ftppass
 .temp

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New Work Week
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="FHE:version" content="0.1.2">
+    <meta name="FHE:build" content="1536234596559">
+    <link rel="icon" href="images/logo-new-work-week.svg" sizes="any" type="image/svg+xml">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="reset">
+    <header class="intro">
+      <div class="wrapper">
+        <h1 class="intro-logo">new-work-week.com</h1>
+        <h2 class="intro-date">
+          <time datetime="2018-10-15">15.</time>&nbsp;&dash;
+          <time datetime="2018-10-19">19. Oktober 2018</time>
+        </h2>
+        <div class="intro-inauguration">
+          <p class="text-uppercase">Nürnberg</p>
+          <p>Das Denken ändert sich – das Arbeiten auch. Neue Geschäftsmodelle, Innovationen und Zukunftslösungen bewegen Menschen und Mitarbeiter und verändern so die Gesellschaft. Neues Arbeiten fängt gerade an neue Wege einzuschlagen. Als Partner des Nürnberg Digital Festival 2018 bündeln wir die Themen rund um NEW&nbsp;WORK und bieten mit tollen Gastgebern Content geladene Events mit Food, Drinks & Music - alle kostenfrei!</p>
+        </div>
+        <nav class="intro-nav">
+          <ul>
+            <li><a href="">Über die&nbsp;<strong>New Work Week</strong></a></li>
+            <li><a href="">Zum&nbsp;<strong>Programm</strong></a></li>
+          </ul>
+        </nav>
+      </div>
+      <nav class="logo-nav margin-top-medium">
+        <div class="wrapper margin">
+          <ul class="reset">
+            <li data-href="http://" data-background="images/logo-humanfy.png">Humanify</li>
+            <li data-href="http://" data-background="images/logo-psd-bank.svg">PSD Bank</li>
+            <li data-href="http://" data-background="images/logo-teambank.png">Teambank</li>
+            <li data-href="http://" data-background="images/logo-exitgames-nurnberg.png">Exitgames</li>
+            <li data-href="http://" data-background="images/logo-fachkraefterekrutieren-de.png">Exitgames</li>
+            <li data-href="http://" data-background="images/logo-sparda-consult.png">Sparda-Consult</li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="content">
+      <div class="wrapper">
+        <section class="section">
+          <h2 class="section-title">Was auf der New Work Week passiert</h2>
+          <div class="_grid">
+            <div class="_row-half">
+              <p>Wir schaffen <b>Inspirationsräume</b> und machen den Spagat zwischen „ausgedient“ und „sinnstiftend“ - offen, gemeinsam und per Du. </p>
+              <p>Wir bereiten Change und Transformation zum Ereignis und nehmen auch diejenigen mit, die sich jetzt erst mit NEW WORK beschäftigen. Wir verbinden unterschiedliche Perspektiven und vereinfachen mit „start with simplify“ die Komplexität. Wir betrachten was sich wirklich verändert hat und sind startklar in jeder Beziehung für neu geschaffene „grüne Arbeitswelten“. Wir erkunden (draußen) was das Leben spannend macht und schreiben den NEW WORK THRILL „Outsite“ (drinnen). Wir übersetzen agile Regeln von Software zu Brainware in einer einzigartigen Atmosphäre. Wir gestalten eine offene Roadmap und bringen das zusammen, was neu zusammen bringen soll.</p>
+            </div>
+            <div class="_row-half">
+              <p>Täglich vom Montag bis Freitag findet ihr einen neuen Spirit, angenehmes Netzwerken und tolle Umgebungen, die unsere Gastgeber und Co-Initiatoren möglich machen.</p>
+              <p>
+                Wir bedanken uns bei den Gastgebern:<br>
+                humanfy | think tank, PSD Bank, ExitGames Nürnberg, TeamBank, Fachkräfterekrutieren(.)de, Sparda Consult.
+              </p>
+              <p>Ich freue mich gemeinsam mit meinen Co-Initiatoren: Möbelkollektiv, Design Offices, Flixbus, Soulfood, Lauschner Medientechnik udn wünschedesign auf eine content-geladene Woche vom 15. bis 19. Oktober 2018 und lade (so Plätze verfügbar sind) alle herzlich ein.</p>
+              <p>
+                Euer<br>
+                Arthur
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Programm</h2>
+          <p>Ab sofort können Sie sich zu den Veranstaltungen anmelden. Bitte beachten Sie, dass auf Grund der Räumlichkeiten die Teilnehmerzahl begrenzt ist.</p>
+        </section>
+        <section id="events">
+          <ul class="reset">
+            <li class="eventbox _grid" v-for="(event, e_id) in events">
+              <div class="_row-half">
+                <div class="event-info">
+                  <time class="event-info-date" :datetime="event.date"><span class="event-info-date--day">{{ event.starts | dddd }}</span><span class="event-info-date--date">{{ event.starts | ll }}</span><span class="event-info-date--time">{{ event.starts | LT }} &ndash; {{ event.ends | LT }} Uhr</span></time>
+                  <address class="event-info-location"><span class="event-info-location--location">{{ event.location }}</span>
+                    <ul class="event-info-location--address">
+                      <li v-for="(locItem, l_id) in event.address">{{ locItem }}</li>
+                    </ul>
+                  </address><a class="event-info-link" :href="event.link">Kostenfreies <b>Ticket</b></a>
+                </div>
+              </div>
+              <div class="_row-half">
+                <div class="event-description">
+                  <h3 class="event-description-title"><span class="strong-font" v-if="event.title[0]">{{ event.title[0] }}</span><span v-if="event.title[1]"><br>{{ event.title[1] }}</span></h3>
+                  <p v-for="(p, p_id) in event.text">{{ p }}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <p class="margin-xlarge"><strong>Kontakt<br></strong>Arthur P. Soballa<br>
+          c/o Möbelkollektiv GmbH | Wiesentalstraße 40 | Bauteil C | 90419 Nürnberg<br>
+          mobile +49 172 277 91 21 | www.new-work-week.com | info@new-work-week.com
+        </p>
+        <div class="text-center margin-bottom-medium"><img src="images/logo-ndf-partner-white.svg" alt="NDF" style="width:300px;"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="wrapper">
+        <h4 class="text-center">Co-Initiatoren</h4>
+        <nav class="logo-nav margin">
+          <ul class="reset">
+            <li data-href="http://" data-background="images/logo-innopreneur_grey.png">innopreneur</li>
+            <li data-href="http://" data-background="images/logo-moebelkollektiv-grey.png">Möbel Kollektiv</li>
+            <li data-href="http://" data-background="images/logo-design-offices-grey.png">Design Offices</li>
+            <li data-href="http://" data-background="images/logo-flixbus-grey.png">Flixbus</li>
+            <li data-href="http://" data-background="images/logo-soulfood-grey.jpg">Soulfood</li>
+            <li data-href="http://" data-background="images/logo-dielichtwerber-grey.svg">Lauschner</li>
+            <li data-href="http://wuenschedesign.de" data-background="images/logo-wuenschedesign-grey.svg">Wünschedesign</li>
+          </ul>
+        </nav>
+        <p class="text-center"><a href="">Impressum</a><span>&nbsp;|&nbsp;</span><a href="">Datenschutz</a></p>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/de.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+    <script src="js/default.js"></script>
+  </body>
+</html>

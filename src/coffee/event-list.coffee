@@ -1,16 +1,13 @@
 eventList = [{
     title : [
-        'start with simplify'
-        'Entscheidungen für Mental Agility'
+        '„start with simplify“'
+        'Entscheidungshilfen für Innovation, Leadership und Mental Agility'
     ]
     text : [
-        'Wir schaffen Inspirationsräume und machen den Spagat zwischen „ausgedient“ und „sinnstiftend“ - offen, gemeinsam und per Du.'
-        'Wir bereiten Change und Transformation zum Ereignis und nehmen auch diejenigen mit, die sich jetzt erst mit NEW WORK beschäftigen. Wir verbinden unterschiedliche Perspektiven und vereinfachen mit „start with simplify“ die Komplexität. Wir betrachten was sich wirklich verändert hat und sind startklar in jeder Beziehung für neu geschaffene „grüne Arbeitswelten“. Wir erkunden (draußen) was das Leben spannend macht und schreiben den NEW WORK THRILL „Outsite“ (drinnen). Wir übersetzen agile Regeln von Software zu Brainware in einer einzigartigen Atmosphäre. Wir gestalten eine offene Roadmap und bringen das zusammen, was neu zusammen bringen soll.'
-        'Täglich vom Montag bis Freitag findet ihr einen neuen Spirit, angenehmes Netzwerken und tolle Umgebungen, die unsere Gastgeber und Co-Initiatoren möglich machen.'
+        'Neue Geschäftsmodelle, Innovationen und Zukunftslösungen bewegen Menschen und verändern die Gesellschaft. Technologie, Digitalisierung und Automatisierung stehen im Fokus der Medien. Doch was geschieht mit Mensch und Mitarbeiter*innen? Welche Lösungen brauchen Führungskräfte und Entscheider? Wir möchten mit der humanfy Expertise „Innovation, Leadership und Mental Agility“ die Komplexität reduzieren und gemeinsam praktikable Entscheidungshilfen für die unternehmerische Anwendung herausarbeiten.'
     ]
-    date     : '2018-10-15'
-    starts   : '18:00'
-    ends     : '23:00'
+    starts   : '2018-10-15 15:00'
+    ends     : '2018-10-15 17:30'
     link     : 'http://'
     location : 'humanfy @Design Offices Nürnberg'
     address  : [
@@ -25,9 +22,8 @@ eventList = [{
     text : [
         'Effizienz- und Innovationsdruck führen zu einer intensiveren Zusammenarbeit. Entsprechende Auswirkungen sind sichtbar im Organisationsdesign, in den Managementmethoden und in der Mitarbeiter-Erfahrung – human eXperience (hX). An einem aktuellen Projekt für die PSD-Bank zeigen wir auf, wie transparentere Zusammenarbeit zu einem agilen Antrieb und unternehmensübergreifendem Agieren führt.'
     ]
-    date     : '2018-10-16'
-    starts   : '18:30'
-    ends     : '23:00'
+    starts   : '2018-10-16 18:30'
+    ends     : '2018-10-16 23:00'
     link     : 'http://'
     location : 'PSD-Bank @Möbelkollektiv'
     address  : [
@@ -35,5 +31,55 @@ eventList = [{
         'Bauteil C'
         '3. OG'
         '90419 Nürnberg'
+    ]
+}, {
+    title : [
+        'ExitGames Nürnberg'
+        '„Outsite“ New Work Thrill'
+    ]
+    text : [
+        'Was sind schon psychologische oder politische Thriller, das hier ist „real & new“. Die Teams erheben sich zu einer besonderen Gattung des neuen Arbeitens „Outsite - The gX To Pertrition“. Gamification eXperience – the real thing, what you really want to do. Wir präsentieren Ergebnisse im neuen Verständnis des ExitGames „Outsite“ - Ereignis, Erlebnis, Ergebnis, bleib gespannt!'
+    ],
+    starts : '2018-10-17 14:00'
+    ends   : '2018-10-17 17:30'
+    link   : 'http://'
+    location : 'ExitGames @DesignOffices Nürnberg'
+    address : [
+        'Königstorgraben 11'
+        '90402 Nürnberg'
+    ]
+}, {
+    title : [
+        'Agilität in der Softwareentwicklung'
+    ]
+    text : [
+        'Agilität ist in der Softwareentwicklung hat sich bereits etabliert, doch wie gelingt der Übertrag von Agilität auf das gesamte Unternehmen?'
+        'Innovative und individualisierbare Lösungen erfordern neben Technologie und Methodik eine (eigene) Prinzipienumgebung für teamübergreifende Zusammenarbeit - auch außerhalb der Softwareentwicklung. Es braucht Mitarbeiter, die mit Einsatz, Begeisterung und Überzeugung gemeinsame Wege des Lernens und Entwickelns gehen wollen. Am Beispiel TeamBank AG zeigen Mitarbeiter, Teams und Projekte ihre Prinzipien und Werkzeuge wie innerhalb der TeamBank AG Entwicklung mitbestimmt wird.'
+    ]
+    starts : '2018-10-18 18:30'
+    ends : '2018-10-18 23:00'
+    link : 'http://'
+    location : 'TeamBank @Möbelkollektiv'
+    address : [
+        'Wiesentalstraße 40'
+        'Bauteil C'
+        '3. OG'
+        '90419 Nürnberg'
+    ]
+}, {
+    title : [
+        'New Work Roadmap'
+        'Die individuelle Entwicklung von Arbeitswelten und -weisen'
+    ]
+    text : [
+        'Unternehmen haben aktuell die Herausforderung Lösungen zu finden, die sowohl Sicherheit als auch Flexibilität bieten. Generationenübergreifendes Arbeiten, agile Arbeitsweisen und das digitale Selbstverständnis stehen besonders im Mittelpunkt bei Personalverantwortlichen und allen anderen Entscheidern. Sparda Consult und Fachkräfterekrutieren(.)de zeigen praxisorientierte Beispiele einer funktionierenden New Work Roadmap.'
+    ]
+    starts : '2018-10-19 18:30'
+    ends : '2018-10-19 23:00'
+    link : 'http://'
+    location : 'Sparda-Consult'
+    address : [
+        'Laufamholzstraße 116'
+        '90482 Nürnberg'
     ]
 }]

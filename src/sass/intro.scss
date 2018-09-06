@@ -3,7 +3,6 @@ $intro-logo-size: $grid-spacing * 6;
 .intro {
     margin-top: $grid-spacing * 4;
     text-align: center;
-
     background: {
         color: $c-light;
         image: url('../images/background-header.png');
@@ -11,6 +10,14 @@ $intro-logo-size: $grid-spacing * 6;
         size: 95% auto;
         repeat: no-repeat;
         attachment: fixed;
+    }
+
+    &-inauguration {
+        max-width: 960px;
+        margin: {
+            right: auto;
+            left: auto;
+        }
     }
 
     &-location {

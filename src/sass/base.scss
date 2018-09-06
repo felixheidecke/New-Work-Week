@@ -24,15 +24,20 @@ strong, .strong-font, b {
 }
 
 .wrapper {
-    max-width: $viewport;
-    
+    box-sizing: border-box;
     padding: {
-        left: $grid-spacing;
-        right: $grid-spacing;
+        left: $grid-spacing * 2;
+        right: $grid-spacing * 2;
     }
 
     margin : {
         left: auto;
         right: auto;
+    }
+
+    max-width: $viewport-small;
+
+    @media (min-width: 1024px) {
+        max-width: $viewport-large;
     }
 }

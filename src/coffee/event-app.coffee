@@ -11,3 +11,6 @@ new Vue
         ll: (date) ->
             moment date 
                 .format 'll'
+        LT: (date) ->
+            moment date 
+                .format 'LT'

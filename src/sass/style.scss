@@ -1,5 +1,7 @@
 $grid-spacing           : 20px;
-$viewport               : $grid-spacing * 58; // = 1080px
+
+$viewport-large         : $grid-spacing * 58; // = 1080px
+$viewport-small         : $grid-spacing * 38; // = 760px
 
 $font-size-small        : 20px;
 $font-size              : 24px;

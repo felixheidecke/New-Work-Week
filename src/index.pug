@@ -12,11 +12,9 @@ block body
                 |&nbsp;&dash;
                 time(datetime="2018-10-19") 19. Oktober 2018
 
-            span.intro-location Nürnbergs
-            p
-                | Die Antwort auf das NEU ist zugleich die Frage: was ist wirklich GEALTERT und was nicht?<br>
-                | allen Ehren in Ruhe gelassen zu werden oder besonders hervorgehoben zu werden<br>
-                | – um WERTE und Tradition zu feiern.
+            .intro-inauguration
+                p.text-uppercase Nürnberg
+                p Das Denken ändert sich – das Arbeiten auch. Neue Geschäftsmodelle, Innovationen und Zukunftslösungen bewegen Menschen und Mitarbeiter und verändern so die Gesellschaft. Neues Arbeiten fängt gerade an neue Wege einzuschlagen. Als Partner des Nürnberg Digital Festival 2018 bündeln wir die Themen rund um NEW&nbsp;WORK und bieten mit tollen Gastgebern Content geladene Events mit Food, Drinks & Music - alle kostenfrei!
 
             nav.intro-nav
                 ul
@@ -40,18 +38,24 @@ block body
     main.content
         .wrapper
             section.section
-                h2.margin-top-xlarge.margin-bottom-large.text-large.text-center.text-uppercase.font-bold Was auf der New Work Week passiert
+                h2.section-title Was auf der New Work Week passiert
                 ._grid
                     ._row-half
                         p Wir schaffen <b>Inspirationsräume</b> und machen den Spagat zwischen „ausgedient“ und „sinnstiftend“ - offen, gemeinsam und per Du. 
-                        p Wir bereiten Change und Transformation zum Ereignis und nehmen auch diejenigen mit, die sich jetzt erst mit NEW WORK beschäftigen. Wir verbinden unterschiedliche Perspektiven und vereinfachen mit „start with simplify“ die Komplexität. Wir betrachten was sich wirklich verändert hat und sind startklar in jeder Beziehung für neu geschaffene „grüne Arbeitswelten“.
+                        p Wir bereiten Change und Transformation zum Ereignis und nehmen auch diejenigen mit, die sich jetzt erst mit NEW WORK beschäftigen. Wir verbinden unterschiedliche Perspektiven und vereinfachen mit „start with simplify“ die Komplexität. Wir betrachten was sich wirklich verändert hat und sind startklar in jeder Beziehung für neu geschaffene „grüne Arbeitswelten“. Wir erkunden (draußen) was das Leben spannend macht und schreiben den NEW WORK THRILL „Outsite“ (drinnen). Wir übersetzen agile Regeln von Software zu Brainware in einer einzigartigen Atmosphäre. Wir gestalten eine offene Roadmap und bringen das zusammen, was neu zusammen bringen soll.
                     ._row-half
-                        p Wir erkunden (draußen) was das Leben spannend macht und schreiben den NEW WORK THRILL „Outsite“ (drinnen). Wir übersetzen agile Regeln von Software zu Brainware in einer einzigartigen Atmosphäre. Wir gestalten eine offene Roadmap und bringen das zusammen, was neu zusammen bringen soll.
                         p Täglich vom Montag bis Freitag findet ihr einen neuen Spirit, angenehmes Netzwerken und tolle Umgebungen, die unsere Gastgeber und Co-Initiatoren möglich machen.
+                        p
+                            | Wir bedanken uns bei den Gastgebern:<br>
+                            | humanfy | think tank, PSD Bank, ExitGames Nürnberg, TeamBank, Fachkräfterekrutieren(.)de, Sparda Consult.
+                        p Ich freue mich gemeinsam mit meinen Co-Initiatoren: Möbelkollektiv, Design Offices, Flixbus, Soulfood, Lauschner Medientechnik udn wünschedesign auf eine content-geladene Woche vom 15. bis 19. Oktober 2018 und lade (so Plätze verfügbar sind) alle herzlich ein.
+                        p
+                            | Euer<br>
+                            | Arthur
 
             section.section
                 h2.section-title Programm
-                p Ab sofort können SIe sich zu den Veranstaltungen anmelden. Bitte beachten Sie, dass auf Grund der Räumlichkeiten die Teilnehmerzahl begrenzt ist.
+                p Ab sofort können Sie sich zu den Veranstaltungen anmelden. Bitte beachten Sie, dass auf Grund der Räumlichkeiten die Teilnehmerzahl begrenzt ist.
 
             section#events
                 ul.reset
@@ -59,9 +63,9 @@ block body
                         ._row-half
                             .event-info
                                 time(:datetime="event.date").event-info-date
-                                    span.event-info-date--day {{ event.date | dddd }}
-                                    span.event-info-date--date {{ event.date | ll }}
-                                    span.event-info-date--time {{ event.starts }} &ndash; {{ event.ends }} Uhr
+                                    span.event-info-date--day {{ event.starts | dddd }}
+                                    span.event-info-date--date {{ event.starts | ll }}
+                                    span.event-info-date--time {{ event.starts | LT }} &ndash; {{ event.ends | LT }} Uhr
                                 adress.event-info-location
                                     span.event-info-location--location {{ event.location }}
                                     ul.event-info-location--address
@@ -79,9 +83,9 @@ block body
             p.margin-xlarge
                 strong Kontakt<br>
                 | Arthur P. Soballa<br>
-                | c/o Möbelkollektiv GmbH | Wiesentalstraße 40 | Bauteil C | 90419 Nürnberg<br>
-                | mobile +49 172 277 91 21 | www.arpeso.de | info@arpeso.de
+                | c/o Möbelkollektiv GmbH | Wiesentalstraße 40 | Bauteil C | 90419 Nürnberg<br>
+                | mobile +49 172 277 91 21 | www.new-work-week.com | info@new-work-week.com
         
-    footer
+    footer#footer
         .wrapper
             include -logo-nav-bottom

@@ -1,13 +1,16 @@
 .content {
     display: inline-block;
     width: 100%;
-    color: $c-light;
     background: {
         color: $c-background-secondary;
         image: url(../images/background-body.png);
         position: top $grid-spacing center;
         size: 100% auto;
         repeat: no-repeat;
+    }
+
+    &, a {
+        color: $c-light;
     }
 }
 

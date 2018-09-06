@@ -1,20 +1,21 @@
+const sass    = require('node-sass');
 const package = require('./package.json');
 
 module.exports = function(grunt) {
 	grunt.initConfig({
 		// --- Compile Sass and Coffee -----------------------------------------
 		sass: {
-			default: {
-				options: {
-					force: true,
-					style: "expanded",
-					noCache: true
-				},
+			options: {
+				implementation : sass,
+				sourcemap : false
+			},
+			dist: {
 				files: {
 					'htdocs/css/style.css': 'src/sass/style.scss'
 				}
 			}
 		},
+
 		coffee: {
 			default: {
 				options: {
@@ -129,14 +130,15 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-pug');
-	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-ftp-deploy');
 
 	grunt.registerTask("default", [
+		'clean',
 		'sass',
 		'pug:dev',
 		'coffee',
@@ -146,6 +148,7 @@ module.exports = function(grunt) {
 	]);
 	
 	grunt.registerTask("build", [
+		'clean',
 		'sass',
 		'pug:prod',
 		'coffee',
